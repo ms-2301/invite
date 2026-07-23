@@ -25,32 +25,27 @@ export default function Contact() {
     setIsSubmitting(true);
     setStatus({ type: "", message: "" });
 
-    // EmailJS configuration - use environment variables for security
-    // Create a .env file in the root directory with these variables
     const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
     const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
     const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
 
     try {
-      // If EmailJS is not configured, show a fallback message
       if (
         serviceID === "YOUR_SERVICE_ID" ||
         templateID === "YOUR_TEMPLATE_ID" ||
         publicKey === "YOUR_PUBLIC_KEY"
       ) {
-        // Fallback: Open email client
-        const subject = encodeURIComponent(formData.subject || "Portfolio Contact");
+        const subject = encodeURIComponent(formData.subject || "Wedding RSVP");
         const body = encodeURIComponent(
           `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
         );
-        const contactEmail = process.env.REACT_APP_CONTACT_EMAIL || "Mithila@example.com";
+        const contactEmail = process.env.REACT_APP_CONTACT_EMAIL || "mithila12320@gmail.com";
         window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
         setStatus({
           type: "info",
-          message: "Opening your email client. Please configure EmailJS for direct form submission.",
+          message: "Opening your email client so you can send your RSVP.",
         });
       } else {
-        // EmailJS integration
         await emailjs.send(
           serviceID,
           templateID,
@@ -65,7 +60,7 @@ export default function Contact() {
 
         setStatus({
           type: "success",
-          message: "Thank you! Your message has been sent successfully.",
+          message: "Thank you! Your RSVP has been sent successfully.",
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
       }
@@ -73,14 +68,14 @@ export default function Contact() {
       console.error("EmailJS error:", error);
       setStatus({
         type: "error",
-        message: "Sorry, there was an error sending your message. Please try again or email me directly.",
+        message: "Sorry, there was an error sending your RSVP. Please try again or email us directly.",
       });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-    return (
+  return (
     <section id="contact" className="py-20 md:py-32 px-6 md:px-12 lg:px-20 relative bg-gray-900/30">
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -91,17 +86,15 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
-            <span className="text-white">Get In Touch</span>
+            <span className="text-white">RSVP</span>
           </h2>
-          <div className="h-1 w-20  mx-auto mb-6"></div>
-          <p className="text-gray-200 text-lg max-w-3xl mx-auto leading-relaxed">
-            I'm open to opportunities in <span className="text-teal-100 font-semibold">Frontend, Backend, or Full-Stack development.</span> 
-            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          <div className="h-1 w-20 mx-auto mb-6 bg-rose-400"></div>
+          <p className="text-rose-100 text-lg max-w-3xl mx-auto leading-relaxed">
+            Please let us know if you&apos;ll be joining us for our wedding celebration. We would be honored to share this day with you.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, x: -20 }}
@@ -110,54 +103,51 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-white">Let's Connect</h3>
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                Feel free to reach out if you're looking for a developer, have a question, 
-                or just want to connect. I'm always open to discussing new projects, 
-                creative ideas, or opportunities to be part of your visions.
+              <h3 className="text-2xl font-bold mb-6 text-white">Your Invitation</h3>
+              <p className="text-rose-50 mb-8 leading-relaxed">
+                Join us for an evening of love, laughter, and celebration. We would love to have you there as we begin this new chapter together.
               </p>
             </div>
 
             <div className="space-y-4">
               <a
-                href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL || "name@example.com"}`}
-                className="flex items-center gap-4 text-gray-300 hover:text-primary transition-colors group"
+                href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL || "mithila12320@gmail.com"}`}
+                className="flex items-center gap-4 text-rose-50 hover:text-amber-200 transition-colors group"
               >
-                <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <FaEnvelope className="text-primary" />
+                <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-rose-400/20 transition-colors">
+                  <FaEnvelope className="text-rose-300" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Email</p>
+                  <p className="text-sm text-rose-100">Email</p>
                   <p className="font-medium">{process.env.REACT_APP_CONTACT_EMAIL || "mithila12320@gmail.com"}</p>
                 </div>
               </a>
 
               <a
                 href="tel:+1234567890"
-                className="flex items-center gap-4 text-gray-300 hover:text-primary transition-colors group"
+                className="flex items-center gap-4 text-rose-50 hover:text-amber-200 transition-colors group"
               >
-                <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <FaPhone className="text-primary" />
+                <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-rose-400/20 transition-colors">
+                  <FaPhone className="text-rose-300" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Phone</p>
+                  <p className="text-sm text-rose-100">Phone</p>
                   <p className="font-medium">+1 (630) 697-2580</p>
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 text-gray-300">
+              <div className="flex items-center gap-4 text-rose-50">
                 <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center">
-                  <FaMapMarkerAlt className="text-primary" />
+                  <FaMapMarkerAlt className="text-rose-300" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Location</p>
-                  <p className="font-medium">Chicago, IL</p>
+                  <p className="text-sm text-rose-100">Venue</p>
+                  <p className="font-medium">The Grand Hall, Chicago</p>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.form
             onSubmit={handleSubmit}
             className="space-y-6"
@@ -167,8 +157,8 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                Name
+              <label htmlFor="name" className="block text-sm font-medium text-rose-100 mb-2">
+                Your Name
               </label>
               <input
                 type="text"
@@ -177,13 +167,13 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-white placeholder-gray-500 transition-all"
+                className="w-full px-4 py-3 bg-gray-800/50 border border-rose-300/20 rounded-lg focus:outline-none focus:border-rose-300 focus:ring-2 focus:ring-rose-300/20 text-white placeholder-gray-500 transition-all"
                 placeholder="Your Name"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-rose-100 mb-2">
                 Email
               </label>
               <input
@@ -193,14 +183,14 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-white placeholder-gray-500 transition-all"
+                className="w-full px-4 py-3 bg-gray-800/50 border border-rose-300/20 rounded-lg focus:outline-none focus:border-rose-300 focus:ring-2 focus:ring-rose-300/20 text-white placeholder-gray-500 transition-all"
                 placeholder="your.email@example.com"
               />
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                Subject
+              <label htmlFor="subject" className="block text-sm font-medium text-rose-100 mb-2">
+                Guest Count
               </label>
               <input
                 type="text"
@@ -209,14 +199,14 @@ export default function Contact() {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-white placeholder-gray-500 transition-all"
-                placeholder="What's this about?"
+                className="w-full px-4 py-3 bg-gray-800/50 border border-rose-300/20 rounded-lg focus:outline-none focus:border-rose-300 focus:ring-2 focus:ring-rose-300/20 text-white placeholder-gray-500 transition-all"
+                placeholder="2 guests"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                Message
+              <label htmlFor="message" className="block text-sm font-medium text-rose-100 mb-2">
+                A Note for Us
               </label>
               <textarea
                 id="message"
@@ -225,8 +215,8 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows="5"
-                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-white placeholder-gray-500 transition-all resize-none"
-                placeholder="Your message here..."
+                className="w-full px-4 py-3 bg-gray-800/50 border border-rose-300/20 rounded-lg focus:outline-none focus:border-rose-300 focus:ring-2 focus:ring-rose-300/20 text-white placeholder-gray-500 transition-all resize-none"
+                placeholder="Tell us how excited you are..."
               />
             </div>
 
@@ -249,18 +239,16 @@ export default function Contact() {
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-medium transition-all shadow-lg shadow-primary/50 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
-              whileHover={{ scale: isSubmitting ? 1 : 1.02, y: -2 }}
-              whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+              className="w-full bg-rose-500 hover:bg-rose-600 text-white px-8 py-3 rounded-lg font-medium transition-all shadow-lg shadow-rose-500/30 hover:shadow-xl"
+              whileHover={{ scale: 1.01, y: -1 }}
+              whileTap={{ scale: 0.98 }}
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
+              {isSubmitting ? "Sending RSVP..." : "Send RSVP"}
             </motion.button>
-
-           
           </motion.form>
         </div>
       </div>
-      </section>
-    );
-  }
+    </section>
+  );
+}
   

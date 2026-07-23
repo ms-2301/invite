@@ -1,9 +1,9 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import About from "./components/ourStory";
+import Skills from "./components/ceremony";
+import Projects from "./components/WeddingDetails";
+import Contact from "./components/RSVP";
 import Footer from "./components/Footer";
 
 

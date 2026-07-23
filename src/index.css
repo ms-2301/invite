@@ -2,34 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap');
 
 body {
-  @apply bg-gradient-to-b from-blue-900 via-purple-800 to-purple-700 text-white;
+  @apply bg-gradient-to-b from-rose-950 via-fuchsia-950 to-purple-950 text-white;
   font-family: 'Inter', system-ui, sans-serif;
   scroll-behavior: smooth;
- 
 }
 
-/* Smooth scroll */
+h1, h2, h3 {
+  font-family: 'Playfair Display', 'Inter', serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-900;
+  @apply bg-rose-950;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-700 rounded-full;
+  @apply bg-rose-700 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-600;
+  @apply bg-rose-500;
 }
 
