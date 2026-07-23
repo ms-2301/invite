@@ -6,13 +6,9 @@ import {
   FaCalendarDay,
   FaGlassCheers,
   FaMusic,
-  FaHandSparkles,
   FaHeartbeat,
-  FaSmile,
-  FaSpeakerDeck,
   FaSmileWink,
   FaSmileBeam,
-  FaGrinHearts,
 } from "react-icons/fa";
 
 const eventGroups = [
