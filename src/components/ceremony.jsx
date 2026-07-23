@@ -76,10 +76,10 @@ function SectionHeader({ title }) {
   );
 }
 
-export default function Skills() {
+export default function ceremony() {
   return (
     <section
-      id="skills"
+      id="ceremony"
       className="py-20 md:py-32 px-6 md:px-12 lg:px-20 bg-gray-900/30 relative"
     >
       <div className="max-w-4xl mx-auto">
