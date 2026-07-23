@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from "react-icons/fa";
+import {  FaEnvelope, FaHeart } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -46,16 +46,6 @@ export default function Footer() {
             transition={{ delay: 0.2 }}
             className="flex items-center gap-4 text-xl"
           >
-            <motion.a
-              href="https://github.com/ms-2301"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-rose-100 hover:text-amber-200 transition-colors"
-              whileHover={{ scale: 1.2, y: -2 }}
-              aria-label="GitHub"
-            >
-              <FaGithub />
-            </motion.a>
             
             <motion.a
               href="mailto:mithila12320@gmail.com"
