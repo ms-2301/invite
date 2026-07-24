@@ -60,7 +60,7 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
             >
-              <div className={`grid md:grid-cols-2 gap-8 items-center ${index % 2 === 0 ? "" : "md:flex-row-reverse"}`}>
+              <div className={`grid md:grid-cols-1 gap-8 items-center `}>
                 
 
                 <div className={`${index % 2 === 0 ? "md:order-2 text-left md:text-right" : "md:order-1 text-left"}`}>
