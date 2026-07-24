@@ -9,6 +9,8 @@ import {
   FaHeartbeat,
   FaSmileWink,
   FaSmileBeam,
+  FaVideo,
+  FaCamera,
 } from "react-icons/fa";
 
 
@@ -67,17 +69,19 @@ const eventGroups = [
       { name: "Sangeeth & Cocktail", icon: FaSmileWink, color: "text-yellow-300" },
       { name: "Dress Code: Dance Friendly", icon: FaHeart, color: "text-pink-300" },
       { name: "Arrive by 6:00 PM", icon: FaClock, color: "text-amber-200" },
-      { name: "Music: Live Performance", icon: FaMapMarkerAlt, color: "text-emerald-300" },
+      { name: "Music: Live Performance", icon: FaMusic, color: "text-emerald-300" },
 
       { name: "Haldi and Mehendi", icon: FaSmileBeam, color: "text-yellow-300" },
       { name: "Dress Code: colorful", icon: FaHeart, color: "text-pink-300" },
       { name: "Arrive by 5:00 PM", icon: FaClock, color: "text-amber-200" },
-      { name: "Music: Brides Playlist", icon: FaMapMarkerAlt, color: "text-emerald-300" },
+      { name: "Music: Brides Playlist", icon: FaMusic, color: "text-emerald-300" },
 
       { name: "wedding", icon: FaHeartbeat, color: "text-red-300" },
       { name: "Dress Code: Traditional", icon: FaHeart, color: "text-pink-300" },
       { name: "Arrive by 9:00 AM", icon: FaClock, color: "text-amber-200" },
-      { name: "", icon: FaMapMarkerAlt, color: "text-emerald-300" },
+      { name: "Capture Your Moments", icon: FaCamera, color: "text-emerald-300",
+        shareLink: "https://photos.app.goo.gl/DrsSS1D4rPaJD6UJ8",
+       },
 
     ],
   },
@@ -127,6 +131,7 @@ export default function ceremony() {
                 {group.items.map((item, index) => {
                   const Icon = item.icon;
                   const isLocation = item.icon === FaMapMarkerAlt && item.location;
+                  const isLink = item.icon === FaCamera && item.shareLink;
 
                   const cardContent = (
                     <div className="h-full bg-gray-800/50 border border-gray-700/60 rounded-xl p-4 hover:border-rose-300/50 transition-all duration-300 hover:shadow-lg hover:shadow-rose-500/20 flex flex-col items-center justify-center gap-2 cursor-pointer">
@@ -159,9 +164,22 @@ export default function ceremony() {
                         >
                           {cardContent}
                         </a>
-                      ) : (
+
+                      ) : 
+                      isLink ? (
+                     
+                        <a
+                          href={item.shareLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Open link for ${item.name}`}
+                        >
+                          {cardContent}
+                        </a>
+                      ): (
                         cardContent
                       )}
+                      
                     </motion.div>
                   );
                 })}

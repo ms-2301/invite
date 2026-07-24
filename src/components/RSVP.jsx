@@ -111,15 +111,15 @@ export default function Contact() {
 
             <div className="space-y-4">
               <a
-                href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL || "mithila12320@gmail.com"}`}
+                href="tel:+1234567890"
                 className="flex items-center gap-4 text-rose-50 hover:text-amber-200 transition-colors group"
               >
                 <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-rose-400/20 transition-colors">
-                  <FaEnvelope className="text-rose-300" />
+                  <FaPhone className="text-rose-300" />
                 </div>
                 <div>
-                  <p className="text-sm text-rose-100">Email</p>
-                  <p className="font-medium">{process.env.REACT_APP_CONTACT_EMAIL || "mithila12320@gmail.com"}</p>
+                  <p className="text-sm text-rose-100"> Groom Phone</p>
+                  <p className="font-medium">+1 (571) 474-8371</p>
                 </div>
               </a>
 
@@ -131,7 +131,7 @@ export default function Contact() {
                   <FaPhone className="text-rose-300" />
                 </div>
                 <div>
-                  <p className="text-sm text-rose-100">Phone</p>
+                  <p className="text-sm text-rose-100">Bride Phone</p>
                   <p className="font-medium">+1 (630) 697-2580</p>
                 </div>
               </a>
@@ -189,6 +189,25 @@ export default function Contact() {
             </div>
 
             <div>
+              <label htmlFor="attendance" className="block text-sm font-medium text-rose-100 mb-2">
+                Attending
+              </label>
+              <select
+                id="attendance"
+                name="attendance"
+                value={formData.attendance}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-gray-800/50 border border-rose-300/20 rounded-lg focus:outline-none focus:border-rose-300 focus:ring-2 focus:ring-rose-300/20 text-white transition-all"
+              >
+                <option value="" disabled>
+                  Select an option
+                </option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div>
               <label htmlFor="subject" className="block text-sm font-medium text-rose-100 mb-2">
                 Guest Count
               </label>
@@ -196,7 +215,7 @@ export default function Contact() {
                 type="text"
                 id="subject"
                 name="subject"
-                value={formData.subject}
+                value={formData.guest_count}
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 bg-gray-800/50 border border-rose-300/20 rounded-lg focus:outline-none focus:border-rose-300 focus:ring-2 focus:ring-rose-300/20 text-white placeholder-gray-500 transition-all"
