@@ -4,7 +4,7 @@ import { HiArrowDown } from "react-icons/hi";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen text-center px-6 relative overflow-visible pb-8">
+    <section className="flex flex-col items-center justify-center min-h-screen text-center px-6 py-12 relative overflow-visible pb-8">
       <div className="absolute inset-0 bg-gradient-to-br from-rose-500/15 via-transparent to-amber-300/15" />
 
       <motion.div
@@ -37,8 +37,20 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.8 }}
         >
-          Join us for our wedding celebration on 26th November 2026.
+          From a summer love story 9 years ago to forever this winter
+          
         </motion.h2>
+        <motion.h3
+          className="text-xl md:text-3xl font-bold mb-6 text-rose-50"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35, duration: 0.8 }}
+        >
+          Join us for our wedding celebration on 26th November 2026.
+          
+        </motion.h3>
+
+        
 
         <motion.p
           className="text-lg md:text-xl text-rose-100/90 max-w-3xl mx-auto mb-10 leading-relaxed"
@@ -98,7 +110,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.75 }}
         >
-          10:01 AM Ceremony • SVS balaji Temple • Aroura • Illinois
+          10:01 AM Ceremony • SVS balaji Temple • Aurora • Illinois
         </motion.p>
       </motion.div>
 

@@ -1,8 +1,9 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/ourStory";
+import About from "./components/OurStory";
 import Skills from "./components/ceremony";
 import Projects from "./components/WeddingDetails";
+
 import Contact from "./components/RSVP";
 import Footer from "./components/Footer";
 
@@ -19,8 +20,8 @@ export default function App() {
       <Navbar />
       <Hero />
       <About />
-      <Skills />
       <Projects />
+      <Skills />
       <Contact />
       <Footer />
     </>
