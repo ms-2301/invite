@@ -17,7 +17,7 @@ const eventGroups = [
   {
     title: "Sangeeth",
     items: [
-      { name: new Date(2026, 11, 21).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }), icon: FaCalendarDay, color: "text-emerald-300" },
+      { name: "21 Nov 2026", icon: FaCalendarDay, color: "text-emerald-300" },
       { name: "6:00 PM", icon: FaClock, color: "text-amber-200" },
       { name: "Dinner ,Music, Dance & Toasts", icon: FaGlassCheers, color: "text-rose-300" },
       { name: "Live Music", icon: FaMusic, color: "text-cyan-300" },
@@ -27,7 +27,7 @@ const eventGroups = [
   {
     title: "Haldi and Mehendi",
     items: [
-      { name: new Date(2026, 11, 24).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }), icon: FaCalendarDay, color: "text-emerald-300" },
+      { name: "24 Nov 2026", icon: FaCalendarDay, color: "text-emerald-300" },
       { name: "6:00 PM", icon: FaClock, color: "text-amber-200" },
       { name: "Games, Dinner & Toasts", icon: FaGlassCheers, color: "text-rose-300" },
       { name: "Live Music", icon: FaMusic, color: "text-cyan-300" },
@@ -38,7 +38,7 @@ const eventGroups = [
   {
     title: "Ceremony",
     items: [
-      { name: new Date(2026, 11, 26).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }), icon: FaCalendarDay, color: "text-emerald-300" },
+      { name: "26 Nov 2026", icon: FaCalendarDay, color: "text-emerald-300" },
       { name: "10:01 AM", icon: FaClock, color: "text-amber-200" },
       { name: "Muhurtam", icon: FaHeart, color: "text-rose-300" },
       { name: "SVS Balaji Temple", icon: FaMapMarkerAlt, color: "text-emerald-300" },

@@ -142,7 +142,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-rose-100">Venue</p>
-                  <p className="font-medium">The Grand Hall, Chicago</p>
+                  <p className="font-medium">SVS Balaji temple, Aurora</p>
                 </div>
               </div>
             </div>
